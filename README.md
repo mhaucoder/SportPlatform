@@ -1,3 +1,3 @@
-IDE: IntelliJ IDEA Ultimate
-Language: Java
+IDE: IntelliJ IDEA Ultimate \
+Language: Java \
 Framework: Spring Boot
