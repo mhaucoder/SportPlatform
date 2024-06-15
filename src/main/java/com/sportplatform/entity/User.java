@@ -1,6 +1,7 @@
 package com.sportplatform.entity;
 
 import com.sportplatform.common.BaseEntity;
+import com.sportplatform.dto.user.CreateUserDTO;
 import jakarta.persistence.Entity;
 import jakarta.persistence.Table;
 import lombok.*;
