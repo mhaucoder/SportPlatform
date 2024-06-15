@@ -6,7 +6,7 @@ import com.sportplatform.entity.User;
 import com.sportplatform.repository.UserRepository;
 import com.sportplatform.service.interfaces.UserServiceInterface;
 import com.sportplatform.util.ExceptionUtils;
-import com.sportplatform.util.ModelMapperUtils;
+import com.sportplatform.util.MapperUtils;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
@@ -31,14 +31,14 @@ public class UserService implements UserServiceInterface {
 
     public ResponseEntity<User> createUser(CreateUserDTO createUserDTO) {
         User user = new User();
-        User userMapper = ModelMapperUtils.convert(user,createUserDTO);
+        User userMapper = MapperUtils.convert(user,createUserDTO);
         User createUser = userRepository.save(userMapper);
         return ResponseEntity.ok(createUser);
     }
 
     public ResponseEntity<User> updateUser(UpdateUserDTO updateUserDTO){
         User user = userRepository.findById(updateUserDTO.getId()).orElseThrow(ExceptionUtils::NotFound);
-        User userMapper = ModelMapperUtils.convert(user,updateUserDTO);
+        User userMapper = MapperUtils.convert(user,updateUserDTO);
         User updateUser = userRepository.save(userMapper);
         return ResponseEntity.ok(updateUser);
     }
